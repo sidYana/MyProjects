@@ -1,0 +1,56 @@
+<div ng-controller="fileSysCtrler" ng-init="ctrlInit()">
+
+  <div ng-include="'/FileServer/html/navigationBar/navBar.html'"></div>
+
+  <div id="currentDirectory" class="w3-container w3-card-2 w3-padding">
+    <p>Directory: {{currentDir}}</p>
+    <div class="w3-right">
+      <button type="button" name="upload_btn" ng-click="uploadFiles()">Upload</button>
+      <button type="button" name="download_btn">Download</button>
+      <button type="button" name="delete_btn">Delete</button>
+      <button type="button" name="help_btn">Convert</button>
+      <button type="button" name="help_btn">Help</button>
+    </div>
+  </div>
+
+  <div class="w3-container" style="margin-bottom:50px;margin-top:10px;">
+
+    <table class="w3-table-all w3-card-2 w3-centered w3-hoverable">
+      <tr>
+        <th>Selection</th>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Menu</th>
+      </tr>
+      <tr ng-repeat="file in dirTree"
+          ng-class="{'w3-blue': file.selected}">
+        <td>
+          <input ng-if="file.fileType!='back_btn' && file.fileType!='directory'" type="checkbox" ng-model="file.selected"/>
+        </td>
+        <td>
+          <img src="{{getImgForFileType(file)}}" style="width:50px;" ng-click="openFile(file)">
+        </td>
+        <td ng-dblclick="openFile(file)">{{file.fileName}}</td>
+        <td>
+          <span class="w3-button" data-toggle="dropdown">
+            <img src="/FileServer/assets/menu_icon.png">
+            <ul id="file_menu" class="w3-bar-block w3-padding w3-border dropdown-menu">
+              <li class="w3-bar-item w3-button" ng-show="file.fileType=='directory'" ng-click="openFile(file)">Open Folder</li>
+              <li class="w3-bar-item w3-button" ng-show="file.fileType=='file'" ng-click="openFile(file)">Open File</li>
+              <li class="w3-bar-item w3-button" ng-show="file.fileType=='back_btn'" ng-click="openFile(file)">Go Back</li>
+              <li class="w3-bar-item w3-button" ng-if="file.fileType!='back_btn'">Rename</li>
+              <li class="w3-bar-item w3-button" ng-if="file.fileType!='back_btn'" ng-click="setSelectedFile(file)">Properties</li>
+              <li class="w3-bar-item w3-button" ng-if="file.fileType!='directory'" ng-click="downloadFiles([file])">Download</li>
+            </ul>
+          </span>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div ng-include="'/FileServer/html/modals/file_properties_modal.html'"></div>
+  <div ng-include="'/FileServer/html/modals/video_player_modal.html'"></div>
+  <div ng-include="'/FileServer/html/modals/audio_player_modal.html'"></div>
+
+</div>
