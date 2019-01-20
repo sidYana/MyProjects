@@ -28,7 +28,7 @@ Game
 ![image of main page](https://github.com/sidYana/MyProjects/blob/master/SpaceWars/Project%20Snaps/page_5.JPG)
 
 How to Play
-1) Right Click to move
+1) Left Click to move
 2) Space bar to shoot
 3) Z to use shields
 4) CTRL for speed boost
