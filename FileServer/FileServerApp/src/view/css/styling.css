@@ -1,0 +1,21 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+
+.bottom_bar {
+  position : fixed;
+  width : 100%;
+  bottom : 0;
+  height : 50px;
+}
+
+input[type="checkbox"]{
+  width: 35px; /*Desired width*/
+  height: 35px; /*Desired height*/
+  cursor: pointer;
+}

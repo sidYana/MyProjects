@@ -1,0 +1,18 @@
+<!-- The Modal -->
+<div id="video_player_modal" class="w3-modal">
+  <div class="w3-modal-content" style="width:65%;">
+    <header class="w3-container w3-blue">
+      <span class="w3-button w3-display-topright"
+            ng-click="clearVideoData()">&times;</span>
+      <h2>Video Player</h2>
+      <p>{{videoNameShown}}</p>
+    </header>
+
+    <div class="w3-container">
+      <center>
+  			<video width="100%" src="{{video_url}}" type="{{contentType}}" controls></video>
+  		</center>
+    </div>
+
+  </div>
+</div>
