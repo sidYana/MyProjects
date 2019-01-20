@@ -15,17 +15,17 @@ Here you have 3 options
 2) host a game
 3) Customize your player
 
-![image of main page](https://github.com/sidYana/MyProjects/blob/master/SpaceWars/Project%20Snaps/start_page.JPG)
+![image of main page](https://github.com/sidYana/MyProjects/MyProjects/blob/master/SpaceWars/Project%20Snaps/start_page.JPG)
 
 Customize Player Menu
-![image of main page](https://github.com/sidYana/MyProjects/blob/master/SpaceWars/Project%20Snaps/page_2.JPG)
-![image of main page](https://github.com/sidYana/MyProjects/blob/master/SpaceWars/Project%20Snaps/page_3.JPG)
+![image of main page](https://github.com/sidYana/MyProjects/MyProjects/blob/master/SpaceWars/Project%20Snaps/page_2.JPG)
+![image of main page](https://github.com/sidYana/MyProjects/MyProjects/blob/master/SpaceWars/Project%20Snaps/page_3.JPG)
 
 Player waiting Lobby
-![image of main page](https://github.com/sidYana/MyProjects/blob/master/SpaceWars/Project%20Snaps/page_4.JPG)
+![image of main page](https://github.com/sidYana/MyProjects/MyProjects/blob/master/SpaceWars/Project%20Snaps/page_4.JPG)
 
 Game
-![image of main page](https://github.com/sidYana/MyProjects/blob/master/SpaceWars/Project%20Snaps/page_5.JPG)
+![image of main page](https://github.com/sidYana/MyProjects/MyProjects/blob/master/SpaceWars/Project%20Snaps/page_5.JPG)
 
 How to Play
 1) Right Click to move
