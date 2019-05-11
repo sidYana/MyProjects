@@ -247,20 +247,22 @@ public class Creature extends CustomEllipse{
 		memory[2] = outputs[7];
 		memory[3] = outputs[8];
 		
-		turnAcc = PApplet.constrain(turnAcc, 0, 1f);
+		turnAcc = PApplet.map(turnAcc, 0, 1f, 0, 0.01f);
 		
-		if(turnAcc < 0.55) {
-			turn -= turnAcc*0.01f;
+		if(turnAcc < 0.005f) {
+			turn -= turnAcc;
 		}else {
-			turn += turnAcc*0.01f;
+			turn += 0.01f-turnAcc;
+		}
+
+		if(turn < -6.28f || turn > 6.28f){
+			turn = 0;
 		}
 		
-		acc = PApplet.constrain(acc, 0f, 1f);
-		
-		if(acc < 0.55) {
+		if(acc < 0.5) {
 			vel -= acc;
 		}else {
-			vel += acc;
+			vel += 1-acc;
 		}
 		
 		vel = PApplet.constrain(vel, -7.5f, 7.5f);

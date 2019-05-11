@@ -49,8 +49,8 @@ public class UniverseSim extends PApplet {
 	private float translateX = 0;
 	private float translateY = 0;
 	
-	private int initialCreatures = 200;
-	private int maintainMinimumCreatures = 100;
+	private int initialCreatures = 500;
+	private int maintainMinimumCreatures = 300;
 	
 	private List<Integer> populationGraph;
 	private List<Creature> allCreatures = new ArrayList<Creature>();
@@ -92,7 +92,7 @@ public class UniverseSim extends PApplet {
 		UIWindow = new UIWindowDisplay();
 		UIWindowPG = createGraphics((int) (UIPanelWidth), (int) UIPanelHeight, P3D);
 		
-		genes = new GeneticAlgorithm(initialCreatures, 20, 0.51, 0.01, worldWidth, worldHeight, this);
+		genes = new GeneticAlgorithm(initialCreatures, 75, 0.51, 0.01, worldWidth, worldHeight, this);
 		allCreatures.addAll(genes.getPool());
 		allCreaturesQTree = new QuadTreeV2(0, 4, new CustomRectangle(0, 0, worldWidth, worldHeight));
 		params = new CreatureAIParams();
@@ -105,7 +105,6 @@ public class UniverseSim extends PApplet {
 		drawUI();
 		drawSim();
 		renderViewPorts();
-		Runtime.getRuntime().gc();
 	}
 	
 	private void renderViewPorts() {
@@ -327,6 +326,7 @@ public class UniverseSim extends PApplet {
 		UIWindowPG.text("Year:"+currentYear, 50, 400);
 		UIWindowPG.fill(0,255,0);
 		for(Integer dataPoint : populationGraph) {
+			dataPoint = (int) map(dataPoint, 0, initialCreatures + 100, 0, 100);
 			UIWindowPG.rect(posX, posY, 4, -dataPoint);
 			posX+=4;
 		}
