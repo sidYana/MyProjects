@@ -12,13 +12,14 @@ public class Particle extends Drawable {
 	private PVector position;
 	private List<Ray> rays;
 	private int fov = 45;
+	private float increment = 0.5f;
 	private float heading;
 	
 	public Particle(PApplet context, PVector position) {
 		this.context = context;
 		this.position = position;
 		rays = new ArrayList<>();
-		for (int angle = -fov/2; angle < fov/2; angle += 1) {
+		for (float angle = -fov/2; angle < fov/2; angle += increment) {
 			rays.add(new Ray(context, position, PApplet.radians(angle)));
 		}
 	}
@@ -27,7 +28,7 @@ public class Particle extends Drawable {
 		this.pgContext = context;
 		this.position = position;
 		rays = new ArrayList<>();
-		for (int angle = -fov/2; angle < fov/2; angle += 1) {
+		for (float angle = -fov/2; angle < fov/2; angle += increment) {
 			rays.add(new Ray(context, position, PApplet.radians(angle)));
 		}
 	}
@@ -91,8 +92,10 @@ public class Particle extends Drawable {
 
 	public void rotate(float angle) {
 		this.heading+=angle;
-		for(int index = 0, radian = -fov/2; index < rays.size(); index++, radian++) {
+		float radian = -fov/2;
+		for(int index = 0; index < rays.size(); index++) {
 			rays.get(index).setAngle(PApplet.radians(radian)+heading);
+			radian+=increment;
 		}
 	}
 	
