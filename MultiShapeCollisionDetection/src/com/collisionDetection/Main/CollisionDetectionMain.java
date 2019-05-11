@@ -40,6 +40,8 @@ public class CollisionDetectionMain extends PApplet {
 		allShapes = new ArrayList<CustomShape>();
 		quadTree = new QuadTreeV2(0, 1, boundary);
 		debug_enabled = new boolean[2];
+		debug_enabled[0] = false;
+		debug_enabled[1] = true;
 
 		ranges = new ArrayList<>();
 		ranges.add(new CustomRectangle(mouseX, mouseY, 50, 50));
@@ -56,7 +58,7 @@ public class CollisionDetectionMain extends PApplet {
 		stroke(255);
 		noFill();
 
-		quadTree.show(this, false, true);
+		quadTree.show(this, debug_enabled[0], debug_enabled[1]);
 
 		if (ranges.get(index) instanceof CustomRectangle) {
 			range = (CustomRectangle) ranges.get(index);
